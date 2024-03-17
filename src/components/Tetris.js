@@ -1,19 +1,16 @@
 // import styled from "styled-components"
-inport Board from "./Board"
+import Board from "./Board"
+import { useBoard } from "../hooks/useBoard"
 
 // const TetrisContainer = styled.div`
 //   position: relative;
 // `;
 
 
-const Tetris = ({ rows, columns, setGameIVer}) => {
+const Tetris = ({ rows, columns, setGameOVer}) => {
 
   return (
-    // const = [[]];
-
-    <h1>Lets go</h1>
     <Board />
-
   )
   
 }
