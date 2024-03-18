@@ -10,9 +10,11 @@ const Previews = ({ tetrominoes }) => {
 
   return (
     <div>
-      {previewTetrominoes.map((tetromino, index => (
+      {previewTetrominoes.map((tetromino, index) => (
         <Preview tetromino={tetromino} index={index} key={index} />
-      )))}
+      ))}
     </div>
   )
 }
+
+export default Previews

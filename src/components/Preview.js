@@ -1,11 +1,11 @@
-import "./Preview.css";
+// import "./Preview.css";
 import React from "react";
 import styled from "styled-components";
 
-import { buildBoard } from "/src/business/Board";
-import { transferToBoard } from "/src/business/Tetrominoes";
+import { buildBoard } from "../componentFunctions/Board";
+import { transferToBoard } from "../componentFunctions/Tetrominoes";
 
-import BoardCell from "/src/components/BoardCell";
+import BoardCell from "./BoardCell";
 
 
 const PreviewContainer = styled.div`
