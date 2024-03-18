@@ -5,6 +5,7 @@ import Previews from "./Previews"
 
 import {useBoard} from "../hooks/useBoard";
 import {useGameStats} from "../hooks/useGameStats"
+import {usePlayer} from "../hooks/usePlayer"
 
 const TetrisContainer = styled.div`
   position: relative;
@@ -13,7 +14,7 @@ const TetrisContainer = styled.div`
 const Tetris = ({rows, columns, setGameOVer}) => {
   const [board, setBoard] = useBoard({rows, columns});
   const [gameStats, addLinesCleared] = useGameStats();
-  const player = { tetrominoes: []}
+  const [player, setPlayer, resetPlayer] = usePlayer();
 
   return (
     <TetrisContainer className="Tetris">
