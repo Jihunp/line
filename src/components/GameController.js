@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { Action, actionForKey } from "../componentFunctions/Input"
-
+import {Action, actionForKey} from "../componentFunctions/Input";
 
 /*
 .GameController {
@@ -17,21 +16,23 @@ const GameInput = styled.input`
   background-color: red;
 `;
 
-const GameController = ({board, gameStats, player, setGameOVer, setPlayer}) => {
-
-  const onKeyUp = ({ code }) => {
+const GameController = ({board, gameStats, player, setGameOver, setPlayer}) => {
+  const onKeyUp = ({code}) => {
     const action = actionForKey(code);
-    if (action === action.Quit) {
-      setGameOVer(true);
+    if (action === Action.Quit) {
+      setGameOver(true);
     }
+  };
+  const onKeyDown = ({code}) => {
+    console.log(`onKeyDown ${code}`);
   };
 
   return (
     <GameInput
       className="GameController"
       type="text"
-      onKeyDown={onkeydown}
-      onKeyUp={onkeyup}
+      onKeyDown={onKeyDown}
+      onKeyUp={onKeyUp}
       autoFocus
     />
   );
