@@ -1,4 +1,4 @@
-
+import {hasCollision, isWithinBoard} from "./Board"
 import { Rotate } from "./Tetrominoes"
 import { Action } from "./Input"
 
