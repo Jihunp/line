@@ -3,23 +3,20 @@ import styled from "styled-components";
 
 const StatsContainer = styled.ul`
   position: absolute;
-  width: 22vw;
-  background-color: red;
-  list-style-type: none;
-  color: rgba(255, 255, 255, 0.5);
-  right: 0;
-  bottom: 0;
+  top: 70%; /* Adjust as needed */
+  transform: translateY(-50%);
+  left: calc(75%);
   text-align: left;
-  
+  list-style-type: none;
+  color: black;
+  font-size: 40px;
   `;
-  // font-size: 70px;
 
 const StatsValue = styled.li`
   font-size: 2.8rem;
   margin-bottom: 0.5em;
-  color: rgba(255, 255, 255, 1);
-
-`;
+  color: black;
+  `;
 
 
 const GameStats = ({ gameStats }) => {
@@ -30,21 +27,13 @@ const GameStats = ({ gameStats }) => {
   return (
     <div>
       <StatsContainer>
-        <StatsValue>level</StatsValue>
+        <li>Level</li>
         <StatsValue>{level}</StatsValue>
-        <StatsValue>Lines to Level</StatsValue>
+        <li>Lines to Level</li>
         <StatsValue>{linesToLevel}</StatsValue>
-        <StatsValue>Points</StatsValue>
+        <li>Points</li>
         <StatsValue>{points}</StatsValue>
       </StatsContainer>
-    <ul>
-      {/* <li>Level</li>
-      <li className="value">{level}</li>
-      <li>Lines to level</li>
-      <li className="value">{linesToLevel}</li>
-      <li>Points</li>
-      <li className="value">{points}</li> */}
-    </ul>
     </div>
   );
 };
