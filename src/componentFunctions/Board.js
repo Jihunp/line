@@ -1,4 +1,5 @@
-import { cells, transferToBoard } from "./Cell"
+import { cells } from "./Cell"
+import { transferToBoard } from "./Tetrominoes";
 
 export const buildBoard = ({ rows, columns }) => {
   const builtBoard = Array.from({ length: rows }, () =>
@@ -26,4 +27,9 @@ export const nextBoard = ({ board, player, resetPlayer, addLinesCleared }) => {
     rows,
     shape: tetromino.shape
   });
+
+  return {
+    rows,
+    size: {...board.size}
+  }
 }
