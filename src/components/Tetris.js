@@ -12,9 +12,15 @@ const TetrisContainer = styled.div`
 `;
 
 const Tetris = ({rows, columns, setGameOVer}) => {
-  const [board, setBoard] = useBoard({rows, columns});
   const [gameStats, addLinesCleared] = useGameStats();
   const [player, setPlayer, resetPlayer] = usePlayer();
+  const [board, setBoard] = useBoard({
+    rows,
+    columns,
+    player,
+    resetPlayer,
+    addLinesCleared,
+  });
 
   return (
     <TetrisContainer className="Tetris">
