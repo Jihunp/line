@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {Action, actionForKey} from "../componentFunctions/Input";
+import { playerController } from ""
 
 /*
 .GameController {
@@ -24,8 +25,19 @@ const GameController = ({board, gameStats, player, setGameOver, setPlayer}) => {
     }
   };
   const onKeyDown = ({code}) => {
+    const action = actionForKey(code);
     console.log(`onKeyDown ${code}`);
   };
+
+  const handleInput = ({ action }) => {
+    playerController({
+      action,
+      board,
+      player,
+      setPlayer,
+      setGameOver
+    })
+  }
 
   return (
     <GameInput
