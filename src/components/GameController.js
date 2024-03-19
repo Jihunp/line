@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {Action, actionForKey} from "../componentFunctions/Input";
-import { playerController } from ""
+import { playerController } from "../componentFunctions/PlayerController"
 
 /*
 .GameController {
@@ -18,7 +18,7 @@ const GameInput = styled.input`
 `;
 
 const GameController = ({board, gameStats, player, setGameOver, setPlayer}) => {
-  const onKeyUp = ({code}) => {
+  const onKeyUp = ({ code }) => {
     const action = actionForKey(code);
     if (action === Action.Quit) {
       setGameOver(true);
