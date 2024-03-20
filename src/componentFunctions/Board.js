@@ -71,6 +71,24 @@ export const nextBoard = ({ board, player, resetPlayer, addLinesCleared }) => {
     });
   }
 
+  //clear lines
+  const blankRow = rows[0].map((_) => ({ ...cells }));
+  let linesCleared = 0;
+  rows = rows.reduce((acc, row) => {
+    if (row.every((column) => column.occupied)) {
+      linesCleared++;
+      acc.unshift([...blankRow]);
+    } else {
+      acc.push(row);
+    }
+
+    return acc;
+  }, []);
+
+  if (linesCleared > 0) {
+    addLinesCleared(linesCleared);
+  }
+
   if(player.collided || player.isFastDrop) {
     resetPlayer();
   }
