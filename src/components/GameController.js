@@ -2,6 +2,11 @@ import styled from "styled-components";
 import {Action, actionForKey} from "../componentFunctions/Input";
 import { playerController } from "../componentFunctions/PlayerController"
 
+import { useInterval } from "../hooks/useInterval"
+import { useDropTime } from "../hooks/useDropTime"
+
+
+
 /*
 .GameController {
   position: absolute;
@@ -18,6 +23,12 @@ const GameInput = styled.input`
 `;
 
 const GameController = ({board, gameStats, player, setGameOver, setPlayer}) => {
+  const [dropTime, pauseDropTime, resumeDropTime] = useDropTime({ gameStats });
+  
+  useInterval(() => {
+    handleInput({ action: Action.SlowDrop });
+  }, 1000);
+  
   const onKeyUp = ({ code }) => {
     const action = actionForKey(code);
     if (action === Action.Quit) {
