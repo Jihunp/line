@@ -1,37 +1,43 @@
 import styled from "styled-components";
 import {Action, actionForKey, actionIsDrop} from "../componentFunctions/Input";
-import { playerController } from "../componentFunctions/PlayerController"
+import {playerController} from "../componentFunctions/PlayerController";
 
-import { useInterval } from "../hooks/useInterval"
-import { useDropTime } from "../hooks/useDropTime"
-
-
-
-/*
-.GameController {
-  position: absolute;
-  top: -100em;
-}
-
-*/
+import {useInterval} from "../hooks/useInterval";
+import {useDropTime} from "../hooks/useDropTime";
 
 const GameInput = styled.input`
   position: absolute;
-  top: 20px; /* Adjust as needed */
-  right: 20px;
-  background-color: red;
+  left: 30px;
+  top: 30px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #555;
+  }
+
+  &:focus {
+    background-color: #666;
+  }
 `;
 
 const GameController = ({board, gameStats, player, setGameOver, setPlayer}) => {
-  const [dropTime, pauseDropTime, resumeDropTime] = useDropTime({ gameStats });
-  
+  const [dropTime, pauseDropTime, resumeDropTime] = useDropTime({gameStats});
+
   useInterval(() => {
-    handleInput({ action: Action.SlowDrop });
+    handleInput({action: Action.SlowDrop});
   }, dropTime);
-  
-  const onKeyUp = ({ code }) => {
+
+  const onKeyUp = ({code}) => {
     const action = actionForKey(code);
-    if (actionIsDrop(action)) pauseDropTime();
+    if (actionIsDrop(action)) resumeDropTime();
   };
   const onKeyDown = ({code}) => {
     const action = actionForKey(code);
@@ -46,28 +52,34 @@ const GameController = ({board, gameStats, player, setGameOver, setPlayer}) => {
       setGameOver(true);
     } else {
       if (actionIsDrop(action)) pauseDropTime();
-      handleInput({ action });
+      if (!dropTime) {
+        return;
+      }
+      handleInput({action});
     }
   };
 
-  const handleInput = ({ action }) => {
+  const handleInput = ({action}) => {
     playerController({
       action,
       board,
       player,
       setPlayer,
-      setGameOver
-    })
-  }
+      setGameOver,
+    });
+  };
 
   return (
-    <GameInput
-      className="GameController"
-      type="text"
-      onKeyDown={onKeyDown}
-      onKeyUp={onKeyUp}
-      autoFocus
-    />
+    <div>
+      <GameInput
+        className="GameController"
+        type="text"
+        onKeyDown={onKeyDown}
+        onKeyUp={onKeyUp}
+        autoFocus
+        onFocus={(e) => e.target.select()}
+      />
+    </div>
   );
 };
 

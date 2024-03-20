@@ -13,6 +13,9 @@ const TetrisContainer = styled.div`
   position: relative;
 `;
 
+
+
+
 const Tetris = ({rows, columns, setGameOver}) => {
   const [gameStats, addLinesCleared] = useGameStats();
   const [player, setPlayer, resetPlayer] = usePlayer();

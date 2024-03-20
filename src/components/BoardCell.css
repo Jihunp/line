@@ -32,23 +32,23 @@
 }
 
 .tetromino__i {
-  background-color: rgba(80, 227, 230, 1);
+  background-color: rgba(251, 79, 49, 1); /* Red */
 }
 .tetromino__j {
-  background-color: rgba(36, 95, 223, 1);
+  background-color: rgba(21, 101, 174, 1); /* Blue */
 }
 .tetromino__l {
-  background-color: rgba(223, 173, 36, 1);
+  background-color: rgba(242, 217, 93, 1); /* Yellow */
 }
 .tetromino__o {
-  background-color: rgba(223, 217, 36, 1);
+  background-color: rgba(29, 191, 115, 1); /* Green */
 }
 .tetromino__s {
-  background-color: rgba(48, 211, 56, 1);
+  background-color: rgba(230, 111, 75, 1); /* Orange */
 }
 .tetromino__t {
-  background-color: rgba(132, 61, 198, 1);
+  background-color: rgba(168, 48, 138, 1); /* Purple */
 }
 .tetromino__z {
-  background-color: rgba(240, 80, 195, 1);
+  background-color: rgba(204, 184, 108, 1); /* Brown */
 }

@@ -1,7 +1,5 @@
-
 import styled from "styled-components";
 import BoardCell from "./BoardCell";
-
 
 const BoardContainer = styled.div`
   margin: 2em auto;
@@ -13,14 +11,13 @@ const BoardContainer = styled.div`
   border: 10px solid rgb(32, 0, 64);
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+`;
 
-`
-
-
-const Board = ({ board }) => {
+const Board = ({board}) => {
   const boardStyles = {
     gridTemplateRows: `repeat(${board.size.rows}, 1fr)`,
-    gridTemplateColumns: `repeat(${board.size.columns}, 1fr)`
+    gridTemplateColumns: `repeat(${board.size.columns}, 1fr)`,
   };
 
   return (
