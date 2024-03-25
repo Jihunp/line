@@ -10,7 +10,7 @@ const GameInput = styled.input`
   left: 30px;
   top: 30px;
   padding: 10px;
-  font-size: 16px;
+  font-size: 12px;
   background-color: #333;
   color: #fff;
   border: none;

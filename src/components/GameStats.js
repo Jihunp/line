@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 const StatsContainer = styled.ul`
   position: absolute;
-  top: 70%; /* Adjust as needed */
+  top: 80%; /* Adjust as needed */
   transform: translateY(-50%);
   left: calc(75%);
   text-align: left;
   list-style-type: none;
   color: black;
-  font-size: 40px;
+  font-size: 30px;
   `;
 
 const StatsValue = styled.li`
