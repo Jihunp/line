@@ -2,6 +2,10 @@
 
 This Tetris game is built in React using modular components, hooks, and `styled-components` for a sleek UI. The game follows standard Tetris mechanics, where players control falling Tetromino shapes to clear rows.
 
+#Check out the app here
+## https://tetris-kappa-blush.vercel.app/
+## **Dislaimer, play the game using half of your screen.
+
 ## Project Structure
 
 ### Components
